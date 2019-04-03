@@ -12,7 +12,6 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
 
-
 @Service
 public class SimpleEmailService {
     public static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(SimpleMailMessage.class);
@@ -22,28 +21,30 @@ public class SimpleEmailService {
     @Autowired
     private MailCreatorService mailCreatorService;
 
-    public void send(final Mail mail){
+    public void send(final Mail mail) {
         LOGGER.info("Starting email preparation..");
-        try{
+        try {
             javaMailSender.send(createMimeMessage(mail));
             LOGGER.info("Email has been sent.");
 
-        } catch(MailException e) {
+        } catch (MailException e) {
             LOGGER.error("Failed to process email sending...", e.getMessage(), e);
         }
     }
-    public  void sendInfo(final Mail mail){
+
+    public void sendInfo(final Mail mail) {
         LOGGER.info("Starting email preparation..");
-        try{
+        try {
             javaMailSender.send(createMimeInfoMessage(mail));
             LOGGER.info("Email has been sent.");
 
-        } catch(MailException e) {
+        } catch (MailException e) {
             LOGGER.error("Failed to process email sending...", e.getMessage(), e);
         }
 
     }
-    public MimeMessagePreparator createMimeMessage(final Mail mail){
+
+    public MimeMessagePreparator createMimeMessage(final Mail mail) {
         return mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
@@ -51,7 +52,8 @@ public class SimpleEmailService {
             messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()), true);
         };
     }
-    public MimeMessagePreparator createMimeInfoMessage(final Mail mail){
+
+    public MimeMessagePreparator createMimeInfoMessage(final Mail mail) {
         return mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
@@ -59,6 +61,7 @@ public class SimpleEmailService {
             messageHelper.setText(mailCreatorService.buildDailyInfo(mail.getMessage()), true);
         };
     }
+
     private SimpleMailMessage createMailMessage(final Mail mail) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
