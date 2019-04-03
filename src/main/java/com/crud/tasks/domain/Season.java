@@ -14,9 +14,11 @@ import javax.persistence.*;
 public class Season {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
     @Column
     private Long cartoonId;
+
     @Column
     private String name;
 //    @ManyToOne

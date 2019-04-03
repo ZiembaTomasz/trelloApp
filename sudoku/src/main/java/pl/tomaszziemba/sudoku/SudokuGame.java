@@ -6,37 +6,12 @@ import java.util.List;
 public class SudokuGame {
     public static void main(String[] args) {
 
-//        System.out.println("Hello World!");
-//        Random random = new Random();
-//        List<SudokuRow>rows = new ArrayList<>();
-//        SudokuBoards table = new SudokuBoards(rows);
-//        for(int i =0; i<9; i++){
-//
-//            List<SudokuElement>elements = new ArrayList<>();
-//            for (int j =0; j<9; j++){
-//                SudokuElement element = new SudokuElement(random.nextInt(9)+ 1);
-//                elements.add(element);
-//            }
-//            SudokuRow row = new SudokuRow(elements);
-//            rows.add(row);
-//
-//
-//        }
-        SudokuBoards table;
 
+        SudokuBoards table;
         table = new SudokuGame().createTable();
         SudokuGame sudokuGame = new SudokuGame();
         sudokuGame.sudokuAlgorithm(table);
-        //table = new SudokuGame().createTable();
         printTable(table);
-        //new SudokuGame().sudokuAlgorithm(table);
-        //printTable(table);
-
-//        boolean gameFinished = false;
-        //       while(!gameFinished) {
-        //          SudokuGame theGame = new SudokuGame();
-        //         gameFinished = theGame.resolveSudoku();
-        //    }
     }
 
     private static void printTable(SudokuBoards table) {
@@ -47,9 +22,7 @@ public class SudokuGame {
                 System.out.println(" ");
             }
             printRow(sudokuRow);
-
         }
-
     }
 
     private static void printRow(SudokuRow sudokuRow) {
@@ -75,7 +48,6 @@ public class SudokuGame {
                         return true;
                     }
                 }
-
             }
         }
         return false;
@@ -143,10 +115,8 @@ public class SudokuGame {
                     List<SudokuElement> squareElements = getElementsForSquare(sudokuBoards, a, b);
                     removeElements(checkedElement, squareElements);
                 }
-
             }
         }
-
     }
 
     public List<SudokuElement> getElementsForSquare(SudokuBoards sudokuBoards, int a, int b) {
@@ -155,7 +125,6 @@ public class SudokuGame {
             for (int m = b; m <= b + 2; m++) {
                 SudokuElement elementToRemove = sudokuBoards.getRows().get(n).getElements().get(m);
                 squareElements.add(elementToRemove);
-
             }
         }
         return squareElements;

@@ -15,9 +15,11 @@ public class Episod {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column
     @NotNull
     private String name;
+
     @ManyToOne
     @JoinColumn(name = "seasonID")
     private Season season;

@@ -14,11 +14,14 @@ public class UserRating {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column
     private int rating;
     @ManyToOne
+
     @JoinColumn(name ="userId")
     private User user;
+
     @Column
     private Long cartoonId;
 }

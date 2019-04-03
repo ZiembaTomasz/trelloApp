@@ -11,6 +11,7 @@ public class CartoonTest {
 
     @Test
     public void tescik(){
+        //Given
         Cartoon cartoon = new Cartoon();
         List<UserRating> userRatings = new ArrayList<>();
         userRatings.add(new UserRating(2L, 10, null, 2L));

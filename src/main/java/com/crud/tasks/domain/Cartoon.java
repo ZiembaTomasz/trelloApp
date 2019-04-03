@@ -27,18 +27,22 @@ public class Cartoon {
 
     @Column
     private String name;
+
     @Column
     private int ageRestriction;
+
     @Column
     private Date date;
     @OneToMany(
             cascade = CascadeType.ALL
     )
+
     @JoinColumn(name = "cartoonId")
     private List<Season> seasons;
     @OneToMany(
             cascade = CascadeType.ALL
     )
+
     @JoinColumn(name = "cartoonId")
     private List<UserRating>userRatings;
 
@@ -46,7 +50,5 @@ public class Cartoon {
           return userRatings.stream()
                 .map(t -> t.getRating())
                 .reduce(0,(sum, current) -> sum += current) * 1.0/userRatings.size();
-
     }
-
 }
