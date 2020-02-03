@@ -17,7 +17,6 @@ public class StaticWebPageController {
         model.put("subtraction", "-");
         model.put("six", 6);
         model.put("-two", -2);
-
         return "index";
     }
 }

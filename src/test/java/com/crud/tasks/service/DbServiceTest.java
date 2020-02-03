@@ -28,11 +28,9 @@ public class DbServiceTest {
         assertEquals(taskList, dbService.getAllTasks());
     }
     @Test
-    public void saveTask() {
+    public void shouldSaveTask() {
         Task task = new Task(2L, "Fon", "Jon");
         dbService.saveTask(task);
         assertEquals(task.getContent(), "Jon");
     }
-
-
 }

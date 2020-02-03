@@ -21,5 +21,4 @@ public class MailTest {
         assertEquals("Fast", message);
         assertEquals("Copy", toCc);
     }
-
 }

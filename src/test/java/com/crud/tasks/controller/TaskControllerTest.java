@@ -48,5 +48,4 @@ public class TaskControllerTest {
         mockMvc.perform(delete("/v1/task/deleteTask").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(400));
     }
-
 }

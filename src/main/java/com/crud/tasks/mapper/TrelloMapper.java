@@ -42,5 +42,4 @@ public class TrelloMapper {
         return new TrelloCard(trelloCardDto.getName(), trelloCardDto.getDescription(),
                 trelloCardDto.getPos(), trelloCardDto.getListId());
     }
-
 }

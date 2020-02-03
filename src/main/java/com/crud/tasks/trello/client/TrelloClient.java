@@ -57,6 +57,5 @@ public class TrelloClient {
                     .queryParam("token", trelloConfig.getTrelloToken())
                     .queryParam("fields", "name,id")
                     .queryParam("lists", "all").build().encode().toUri();
-
     }
 }
