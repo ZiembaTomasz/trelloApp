@@ -1,7 +1,7 @@
 # About
 
 ##### Backend and REST application uses Trello tool and Spring Boot.
-##### Additionally application has frontend written in HTML, CSS & Thymeleaf. 
+##### Additionally application has frontend written in HTML, CSS & JavaScript. 
 
 * adding tasks
 * deleting tasks
@@ -20,7 +20,7 @@
 * Gradle
 * HTML
 * CSS
-* Thymeleaf
+* JavaScript
 * Heroku
 
 ## My Heroku
