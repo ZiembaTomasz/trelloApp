@@ -20,7 +20,6 @@
 * Gradle
 * HTML
 * CSS
-* JavaScript
 * Heroku
 
 ## My Heroku
